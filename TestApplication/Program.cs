@@ -14,9 +14,9 @@ using Rebus.Transport.InMem;
 
 namespace TestApplication
 {
-    static class Program
+    internal static class Program
     {
-        static void Main()
+        private static void Main()
         {
             BasicConfigurator.Configure(new ConsoleAppender
             {
@@ -42,9 +42,9 @@ namespace TestApplication
         }
     }
 
-    class RealisticHandler : IHandleMessages<string>
+    internal class RealisticHandler : IHandleMessages<string>
     {
-        static readonly ILog Log = LogManager.GetLogger(typeof(RealisticHandler));
+        private static readonly ILog Log = LogManager.GetLogger(typeof(RealisticHandler));
 
         public async Task Handle(string message)
         {

@@ -12,9 +12,7 @@ namespace Rebus.Log4net
         {
             var transportMessage = context.Load<TransportMessage>();
 
-            string correlationId;
-
-            if (transportMessage.Headers.TryGetValue(Headers.CorrelationId, out correlationId))
+            if (transportMessage.Headers.TryGetValue(Headers.CorrelationId, out var correlationId))
             {
                 LogicalThreadContext.Properties["CorrelationId"] = correlationId;
             }
